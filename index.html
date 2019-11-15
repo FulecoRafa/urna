@@ -6,12 +6,18 @@
         <title>Urna</title>
     </head>
     <body>
-        <form class="electionAdder" onsubmit="electionAdd();return false;">
-            <input type="text" name="electionName">
-            <input type="submit" name="electionSubmit" value="Criar nova eleição">
-        </form>
+    <div class="electionsDiv">
+        <button onclick="electionFormAppear()" class="adder" autocomplete="off">+</button>
         <ul class="elections">
         </ul>
+        <form class="electionAdder" onsubmit="electionAdd();return false;">
+            <input type="text" name="electionName" placeholder="Digita o título para sua eleição">
+            <input type="submit" name="electionSubmit" value="Criar nova eleição">
+        </form>
+    </div>
+    <div class="candidatesDiv">
+
+    </div>
     </body>
-    <script src="index.js"></script>
+    <script src="election.js"></script>
 </html>

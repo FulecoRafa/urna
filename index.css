@@ -1,0 +1,118 @@
+body{
+    background: rgb(14, 53, 14);
+}
+
+.electionsDiv{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 300px auto;
+    background-color: black;
+    border-left: 7px solid rgb(151, 151, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adder{
+    margin: 15px;
+    margin-top: 30px;
+    background: none;
+    padding: 5px 40px;
+    color: linen;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 2px solid green;
+    border-radius: 7px;
+    transition: 0.4s;
+}
+.adder:hover{
+    background: green;
+    transition: 0.2s;
+}
+.adder:active{
+    background: white;
+    border: 2px solid white;
+}
+
+.electionsDiv ul{
+    padding: 0px;
+}
+
+.name{
+    background: none;
+    color: white;
+    padding: 5px 25px;
+    border: 2px solid rgb(0, 0, 158);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+.name:hover{
+    background: rgb(0, 0, 158);
+}
+.name:active{
+    background: white;
+    border: 2px solid white
+    
+}
+
+.exclude{
+    background: none;
+    color: white;
+    font-weight: bold;
+    padding: 3px 15px;
+    border: 2px solid red;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+.exclude:hover{
+    background: red;
+}
+.exclude:active{
+    background: white;
+    border: 2px solid white;
+}
+
+.electionsDiv li{
+    list-style: none;
+    text-indent: -1em;
+    padding: 3px;
+}
+
+.electionAdder{
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.electionAdder input[name = "electionName"]{
+    background: none;
+    border: none;
+    border-bottom: 3px solid green;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    transition: 0.4s;
+}
+.electionAdder input[name = "electionName"]:focus{
+    border-bottom: 3px solid yellowgreen;
+}
+
+.electionAdder input[name = "electionSubmit"]{
+    background: none;
+    margin: 20px;
+    padding: 3px 15px;
+    border: 2px solid green;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+.electionAdder input[name = "electionSubmit"]:hover{
+    background: green;
+}
+.electionAdder input[name = "electionSubmit"]:active{
+    background: white;
+    border: 2px solid white;
+}

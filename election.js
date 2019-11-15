@@ -41,9 +41,17 @@ function excludeElection(index){
 }
 
 function electionAdd(){
-    const electionAddForm = document.querySelector(".electionAdder");
+    let form = document.querySelector(".electionAdder");
     let name = document.querySelector(".electionAdder input[type = text]");
-    electionVector.push(name.value);
+    if(name.value){
+        electionVector.push(name.value);
+    }
     name.value = "";
+    form.style.visibility = "hidden";
     renderElections();
+}
+
+function electionFormAppear(){
+    let form = document.querySelector(".electionAdder");
+    form.style.visibility = "visible";
 }
