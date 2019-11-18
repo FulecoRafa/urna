@@ -7,16 +7,23 @@
     </head>
     <body>
     <div class="electionsDiv">
-        <button onclick="electionFormAppear()" class="adder" autocomplete="off">+</button>
+        <button onclick="electionFormAppear()" class="adder">+</button>
         <ul class="elections">
         </ul>
-        <form class="electionAdder" onsubmit="electionAdd();return false;">
+        <form class="electionAdder" onsubmit="electionAdd();return false;" autocomplete="off">
             <input type="text" name="electionName" placeholder="Digita o título para sua eleição">
             <input type="submit" name="electionSubmit" value="Criar nova eleição">
         </form>
     </div>
     <div class="candidatesDiv">
-
+        <button onclick="candidateFormAppear()" class="adder">+</button>
+        <ul class="candidates">
+        </ul>
+        <form class="candidateAdder" onsubmit="candidateAdd();return false;" autocomplete="off">
+            <input type="text" name="candidateName" placeholder="Nome do candidato">
+            <input type="text" name="candidateNum" placeholder="Número do candidato">
+            <input type="submit" name="candidateSubmit" value="Adicionar candidato à eleição">
+        </form>
     </div>
     </body>
     <script src="election.js"></script>

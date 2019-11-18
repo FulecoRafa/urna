@@ -6,7 +6,7 @@ body{
     position: absolute;
     top: 5%;
     left: 5%;
-    width: 300px auto;
+    width: 330px;
     background-color: black;
     border-left: 7px solid rgb(151, 151, 0);
     display: flex;
@@ -82,6 +82,7 @@ body{
 .electionAdder{
     visibility: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
@@ -115,4 +116,59 @@ body{
 .electionAdder input[name = "electionSubmit"]:active{
     background: white;
     border: 2px solid white;
+}
+
+
+.candidatesDiv{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 330px;
+    background: black;
+    border-left: 5px solid rgb(151, 151, 0);
+    text-align: center;
+}
+
+.candidatesDiv form{
+    visibility: hidden;
+    margin: 10px;
+}
+
+.candidatesDiv input{
+    margin: 5px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid green;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    transition: 0.4s;
+}
+
+.candidatesDiv input[type = "text"]:focus{
+    border-bottom: 2px solid yellowgreen;
+}
+
+.candidateAdder input[name = "candidateSubmit"]{
+    background: none;
+    margin: 20px;
+    padding: 3px 15px;
+    border: 2px solid green;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+.candidateAdder input[name = "candidateSubmit"]:hover{
+    background: green;
+}
+.candidateAdder input[name = "candidateSubmit"]:active{
+    background: white;
+    border: 2px solid white;
+}
+
+.candidatesDiv li{
+    list-style: none;
+    text-indent: -1em;
+    padding: 3px;
 }
