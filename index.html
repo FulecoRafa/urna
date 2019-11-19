@@ -16,6 +16,7 @@
         </form>
     </div>
     <div class="candidatesDiv">
+        <button class="startElection" onclick="startElection();">Iniciar Eleição</button>
         <button onclick="candidateFormAppear()" class="adder">+</button>
         <ul class="candidates">
         </ul>
@@ -24,6 +25,27 @@
             <input type="text" name="candidateNum" placeholder="Número do candidato">
             <input type="submit" name="candidateSubmit" value="Adicionar candidato à eleição">
         </form>
+    </div>
+    <div id="votingMachine">
+        <h2 id="voteTitle">Selecione o número do candidato que quer votar em:</h2>
+        <div id="voter">
+            <select id="candidateVote">
+            </select>
+            <button onclick="addVote();">Votar!</button>
+        </div>
+        <button onclick="countVotes();" id="finishVoting">Finalizar votação</button>
+    </div>
+    <div id="endElection">
+        <table>
+            <caption>Resultados da eleição:</caption>
+            <tr>
+                <th>Nome:</th>
+                <th>Número:</th>
+                <th>Quantidade de votos:</th>
+                <th>Posição:</th>
+            </tr>
+        </table>
+        <button onclick="endOfAll();">Finalizar</button>
     </div>
     </body>
     <script src="election.js"></script>
