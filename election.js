@@ -266,6 +266,4 @@ function endOfAll(){
     row.appendChild(num);
     row.appendChild(votes);
     row.appendChild(position);
-
-    table.appendChild(row);
 }

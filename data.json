@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Batata",
+        "candidates":[
+            {
+                "name": "Joao",
+                "num": 10,
+                "votes": 0
+            },
+            {
+                "name": "Cleber",
+                "num": 23,
+                "votes": 0
+            }
+        ]
+    },
+    {
+        "name": "Pudim",
+        "candidates":[
+            {
+                "name": "Carlos",
+                "num": 15,
+                "votes": 0
+            },
+            {
+                "name": "Ruan",
+                "num": 47,
+                "votes": 0
+            }
+        ]
+    }
+]
