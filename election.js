@@ -6,27 +6,21 @@ class candidate{
     }
 }
 let candidate1 = new candidate("Candidato 1" , 1);
-let candidate2 = new candidate("Candidato 2" , 2);
 
 class election{
     constructor(name){
         this.name = name;
         this.candidates = [
-            candidate1,
-            candidate2
+            candidate1
         ];
     }
 }
 let election1 = new election("Eleição 1");
-let election2 = new election("Eleição 2");
-let election3 = new election("Eleição 3");
 
 let selectedIndex = 0;
 
 let electionVector = [
-    election1,
-    election2,
-    election3
+    election1
 ];
 
 //Elections
