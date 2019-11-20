@@ -280,7 +280,7 @@ function saveElection(){
     let saveLink = document.querySelector("#saveLink");
     saveLink.href = saveFileURL;
     saveLink.click();
-    window.URL.revokeObjectURL(saveFile);
+    window.URL.revokeObjectURL(saveFileURL);
 }
 
 function loadElection(){

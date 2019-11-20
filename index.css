@@ -308,3 +308,18 @@ body{
     text-align: center;
     border: 2px solid rgb(124, 124, 0);
 }
+
+#helpLink:link{
+    color: white;
+    font-size: 25px;
+    border: 2px solid yellow;
+    padding: 4px;
+}
+#helpLink:visited{
+    color: white;
+    font-size: 25px;
+    border: 2px solid yellow;
+}
+#helpLink:hover{
+    color: yellow;
+}
