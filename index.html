@@ -7,6 +7,11 @@
     </head>
     <body>
     <div class="electionsDiv">
+        <div class="loader">
+        <input type="file" id="loadFile">
+        <button onclick="loadElection()" class="adder">Carregar Eleições</button>
+        <button onclick="saveElection()" class="adder">Salvar Eleições</button>
+        </div>
         <button onclick="electionFormAppear()" class="adder">+</button>
         <ul class="elections">
         </ul>
@@ -47,6 +52,7 @@
         </table>
         <button onclick="endOfAll();">Finalizar</button>
     </div>
+    <a id="saveLink" target="_blank"></a>
     </body>
     <script src="election.js"></script>
 </html>

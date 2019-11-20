@@ -104,8 +104,9 @@ function renderCandidates(){
         let name = document.createTextNode(el.name);
         let empty = document.createTextNode(" ");
 
-        let index = electionVector[selectedIndex].candidates.indexOf(el.name);
+        let index = electionVector[selectedIndex].candidates.indexOf(el);
         excludeButton.setAttribute('onclick' , 'excludeCandidate('+index+')');
+        nameButton.setAttribute('onclick',"editInfo("+index+");")
 
         listElement.classList = "candidate";
         excludeButton.classList = "exclude";
@@ -121,6 +122,14 @@ function renderCandidates(){
     }
 }
 renderCandidates();
+
+function editInfo(index){
+    candidateFormAppear();
+    let candidate = electionVector[selectedIndex].candidates[index];
+    document.querySelector(".candidateAdder input[name=candidateName]").value = candidate.name;
+    document.querySelector(".candidateAdder input[name=candidateNum]").value = candidate.num;
+    electionVector[selectedIndex].candidates.splice(index,1);
+}
 
 function excludeCandidate(index){
     electionVector[selectedIndex].candidates.splice(index , 1);
@@ -266,4 +275,29 @@ function endOfAll(){
     row.appendChild(num);
     row.appendChild(votes);
     row.appendChild(position);
+}
+
+//save election
+//---------------------------------------------------
+function saveElection(){
+    let saveFileText = JSON.stringify(electionVector,null,'\t');
+    let saveFile = new Blob([saveFileText],{type:'application/json',name:"electionSaveFile.json"});
+    let saveFileURL = window.URL.createObjectURL(saveFile);
+    let saveLink = document.querySelector("#saveLink");
+    saveLink.href = saveFileURL;
+    saveLink.click();
+    window.URL.revokeObjectURL(saveFile);
+}
+
+function loadElection(){
+    let loadFile = document.querySelector("#loadFile");
+    let fr = new FileReader();
+    fr.onload = function(){
+        let res = JSON.parse(this.result)
+        electionVector = res;
+        renderElections();
+        renderCandidates();
+    }
+    fr.readAsText(loadFile.files[0]);
+    loadFile.value = "";
 }

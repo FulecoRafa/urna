@@ -301,3 +301,10 @@ body{
     background: white;
     border: 2px solid white;
 }
+
+.loader{
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid rgb(124, 124, 0);
+}
