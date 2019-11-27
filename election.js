@@ -243,7 +243,9 @@ function addVote(){
         }
     }
     option.value="Candidato";
-    document.querySelector("#passwdGet").style.visibility = "visible";
+    if(!(localStorage.getItem('passwd')===null)){
+        document.querySelector("#passwdGet").style.visibility = "visible";
+    }
 }
 
 function subPasswd(){
