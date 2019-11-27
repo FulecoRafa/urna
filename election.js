@@ -25,8 +25,9 @@ let electionVector = [
 
 let passwd = "";
 
-loadElection();
-
+if(!localStorage.getItem('data')===null){
+    loadElection();
+}
 //Passwd
 function changePasswd(){
     if(passwd){
