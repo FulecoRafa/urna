@@ -28,6 +28,9 @@ let passwd = "";
 if(!(localStorage.getItem('data')===null)){
     loadElection();
 }
+if(!(localStorage.getItem('passwd')===null)){
+    passwd=localStorage.getItem('passwd');
+}
 //Passwd
 function changePasswd(){
     if(passwd){
@@ -63,6 +66,7 @@ function changePasswd(){
             }
         }
     }
+    localStorage.setItem('passwd' , passwd);
 }
 
 //Elections
@@ -101,8 +105,10 @@ renderElections();
 
 function excludeElection(index){
     electionVector.splice(index,1);
+    selectedIndex = (selectedIndex+1)%(electionVector.length);
     saveElection();
     renderElections();
+    renderCandidates();
 }
 
 function electionAdd(){
@@ -111,11 +117,13 @@ function electionAdd(){
     if(name.value){
         let newElection = new election(name.value);
         electionVector.push(newElection);
+        selectedIndex = electionVector.indexOf(newElection);
     }
     name.value = "";
     form.style.visibility = "hidden";
     saveElection();
     renderElections();
+    renderCandidates();
 }
 
 function electionFormAppear(){
