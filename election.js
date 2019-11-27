@@ -25,7 +25,7 @@ let electionVector = [
 
 let passwd = "";
 
-if(!localStorage.getItem('data')===null){
+if(!(localStorage.getItem('data')===null)){
     loadElection();
 }
 //Passwd
@@ -157,6 +157,9 @@ function renderCandidates(){
         listElement.appendChild(excludeButton);
         
         candidates.appendChild(listElement);
+
+        let title = document.querySelector(".selectedElection");
+        title.innerHTML = electionVector[selectedIndex].name;
     }
 }
 renderCandidates();
