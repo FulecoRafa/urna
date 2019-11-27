@@ -306,6 +306,54 @@ body{
     border: 2px solid white;
 }
 
+#passwdGet{
+    visibility: hidden;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background: rgb(14, 53, 14);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#passwdGet button{
+    margin: 10px;
+    color: white;
+    background: none;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+#passwdGet button:hover{
+    background: green;
+}
+#passwdGet button:active{
+    background: white;
+    border:2px solid white;
+}
+
+#passwdGet input{
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 3px solid green;
+    font-size: larger;
+    text-align: center;
+    width: 250px;
+    transition: 0.4s;
+}
+#passwdGet input:focus{
+    border-bottom: 2px solid greenyellow;
+    width: 300px;
+}
+
 #endElection{
     visibility: hidden;
     position: absolute;

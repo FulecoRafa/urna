@@ -243,6 +243,17 @@ function addVote(){
         }
     }
     option.value="Candidato";
+    document.querySelector("#passwdGet").style.visibility = "visible";
+}
+
+function subPasswd(){
+    let inputPasswd = document.querySelector("#passwdGet input");
+    if(inputPasswd.value === passwd){
+        document.querySelector("#passwdGet").style.visibility="hidden";
+    }else{
+        alert("Senha incorreta!!");
+        inputPasswd.value = "";
+    }
 }
 
 function countVotes(){
