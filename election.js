@@ -23,6 +23,47 @@ let electionVector = [
     election1
 ];
 
+let passwd = "";
+
+loadElection();
+
+//Passwd
+function changePasswd(){
+    if(passwd){
+        let check = prompt("Insira sua senha atual:");
+        if(check === passwd){
+            let newPasswd1;
+            let newPasswd2;
+            while(true){
+                newPasswd1 = prompt("Insira sua nova senha:");
+                newPasswd2 = prompt("Insira a senha novamente:");
+                if(newPasswd1 === newPasswd2){
+                    passwd = newPasswd2;
+                    break;
+                }else{
+                    alert("Senhas não são iguais!");
+                }
+            }
+        }else{
+            alert("Senha incorreta!");
+            return 0;
+        }
+    }else{
+        let newPasswd1;
+        let newPasswd2;
+        while(true){
+            newPasswd1 = prompt("Insira sua nova senha:");
+            newPasswd2 = prompt("Insira a senha novamente:");
+            if(newPasswd1 === newPasswd2){
+                passwd = newPasswd2;
+                break;
+            }else{
+                alert("Senhas não são iguais!");
+            }
+        }
+    }
+}
+
 //Elections
 //----------------------------------------------------------------------
 
@@ -59,6 +100,7 @@ renderElections();
 
 function excludeElection(index){
     electionVector.splice(index,1);
+    saveElection();
     renderElections();
 }
 
@@ -71,6 +113,7 @@ function electionAdd(){
     }
     name.value = "";
     form.style.visibility = "hidden";
+    saveElection();
     renderElections();
 }
 
@@ -128,6 +171,7 @@ function editInfo(index){
 function excludeCandidate(index){
     electionVector[selectedIndex].candidates.splice(index , 1);
     console.log(electionVector[selectedIndex]);
+    saveElection();
     renderCandidates();
 }
 
@@ -142,6 +186,7 @@ function candidateAdd(){
     name.value = "";
     num.value = "";
     form.style.visibility = "hidden";
+    saveElection();
     renderCandidates();
 }
 
@@ -275,23 +320,27 @@ function endOfAll(){
 //---------------------------------------------------
 function saveElection(){
     let saveFileText = JSON.stringify(electionVector,null,'\t');
-    let saveFile = new Blob([saveFileText],{type:'application/json',name:"electionSaveFile.json"});
-    let saveFileURL = window.URL.createObjectURL(saveFile);
-    let saveLink = document.querySelector("#saveLink");
-    saveLink.href = saveFileURL;
-    saveLink.click();
-    window.URL.revokeObjectURL(saveFileURL);
+    localStorage.setItem('data' , saveFileText);
+    console.log(JSON.parse(localStorage.getItem('data')));
 }
 
 function loadElection(){
-    let loadFile = document.querySelector("#loadFile");
-    let fr = new FileReader();
-    fr.onload = function(){
-        let res = JSON.parse(this.result)
-        electionVector = res;
-        renderElections();
-        renderCandidates();
-    }
-    fr.readAsText(loadFile.files[0]);
-    loadFile.value = "";
+    let loadFile = JSON.parse(localStorage.getItem('data'));
+    console.log(loadFile);
+    electionVector = loadFile;
+}
+
+function clearStorage(){
+    localStorage.clear();
+    selectedIndex = 0;
+
+    candidate1=new candidate("Candidato 1", 1);
+    election1=new election("Eleição 1");
+
+
+    electionVector = [election1];
+
+    passwd = "";
+    renderElections();
+    renderCandidates();
 }

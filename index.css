@@ -2,6 +2,42 @@ body{
     background: rgb(14, 53, 14);
 }
 
+.passwd{
+    color: white;
+    background: none;
+    border: 2px solid yellowgreen;
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.passwd:hover{
+    background: yellowgreen;
+}
+.passwd:active{
+    background: white;
+    border: 2px solid white;
+}
+
+.reset{
+    color: white;
+    background: none;
+    border: 2px solid red;
+    padding: 5px;
+    font-size: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+.reset:hover{
+    background: red;
+}
+.reset:active{
+    background: white;
+    border: 2px solid white;
+}
+
 .electionsDiv{
     position: absolute;
     top: 5%;
