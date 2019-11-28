@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        p{
+            text-align: justify;
+            margin-right: 35px;
+        }
+        h3{
+            color: red;
+        }
+    </style>
     <head>
         <meta charset="utf-8">
         <title>Ajuda</title>
@@ -7,11 +16,11 @@
     <body>
         <ol>
             <li>
-                <h1>Ajuda para configurar sua eleição:</h1>
+                <h1>Configurando sua eleição:</h1>
                 <ol>
                     <li>
                         <h2>Criando um nova eleição:</h2>
-                        <p>Para criar uma nova eleição, basta clicar no botão com um '+'(mais)
+                        <p>Para criar uma nova eleição, basta clicar no botão com um '+' (mais)
                             na coluna da esquerda. Um formulário vai aparecer. Preencha com o
                             título da eleição e aperte em 'Criar nova eleição'. Caso você tenha
                             apertado sem querer para adicionar a eleição, basta deixar o formulário
@@ -20,8 +29,106 @@
                     </li>
                     <li>
                         <h2>Apagando uma eleição:</h2>
-                        <p>Para deletar uma eleição, basta clicar no botão com um 'X'(xis)
+                        <p>Para deletar uma eleição, basta clicar no botão com um 'X' (xis)
                             imediatamente ao seu lado.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Acessando os candidatos da sua eleição:</h2>
+                        <p>
+                            Para ver os candidatos cadastrados dentro da eleição, basta clicar
+                            no botão com o nome da sua eleição na coluna à esquerda. Assim que pressionado,
+                            a coluna da direita vai mudar e mostrar o título da eleição e os candidatos
+                            cadastrados.
+                        </p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h1>Configurando candidatos:</h1>
+                <ol>
+                    <li>
+                        <h2>Cadastrando candidatos:</h2>
+                        <p>
+                            Para adicionar um candidato a sua eleição, confira no topo da coluna direita
+                            se a eleição selecionada é a correta e aperte o botão com um '+' (mais) na coluna
+                            direita. Preencha o formulário com o nome do candidato e o número relacionado a ele.
+                            Depois aperte no botão 'Adicionar candidato à eleição'. Assim que apertar, um botão
+                            com o nome do candidato aparecerá.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Apagando candidato:</h2>
+                        <p>
+                            Para deletar um candidato, basta clicar no botão com um 'X' (xis)
+                            imediatamente ao seu lado.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Editar informações do candidato:</h2>
+                        <p>
+                            Para editar as informações do candidato, basta clicar em seu nome. Um formulário
+                            com suas informações aparecerá e ali você pode alterar as informações
+                            <h3>Atenção!</h3>
+                            <p>Deixar este formulário vazio implicará em apagar o candidato!</p>
+                        </p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h1>Outras configurações:</h1>
+                <ol>
+                    <li>
+                        <h2>Configurando senha para controlar eleição:</h2>
+                        <p>
+                            Apertando no botão 'Configurar senha', aparecerá uma notificação para configurar
+                            sua senha. Caso haja uma senha já cadastrada, insira sua senha atual. Depois,
+                            insira sua nova senha e repita ela no próximo quadro. Sua senha já foi configurada.
+                            <br> Caso queira retirar a senha, basta fazer o mesmo processo e deixar a nova senha
+                            em branco.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Resetar configurações:</h2>
+                        <p>
+                            Este botão vai apagar todo o trabalho feito. Aoertar ele inplicará em deletar
+                            todas as eleições, candidatos e senha.
+                        </p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h1>Rodando a eleição:</h1>
+                <ol>
+                    <li>
+                        <h2>Iniciando a eleição:</h2>
+                        <p>
+                            Para iniciar a eleição, basta clicar no botão 'Iniciar eleição'. Assim que clicado
+                            A eleição será iniciada com os candidatos mostrados na coluna direita.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Votando:</h2>
+                        <p>
+                            Assim que iniciada a eleição, uma tela com a votação aparecerá. Para votar, use
+                            a caixa da esquerda para selecionar o número do candidato em que vai votar e clique
+                            no botão 'Votar!'. <br> Caso tenha sido configurada uma senha, a cada voto cadastrado
+                            aparecerá uma tela com uma caixa de texto em que se deve colocar a senha. Apertando no
+                            botão abaixo, você verifica a senha. A eleição só prossigirá se a senha estiver correta.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>Finalizando a eleição:</h2>
+                        <p>
+                            Quando todos os votos tiverem sido cadastrados, aperte no botão 'Finalizar votação'.
+                            Ao clicar, aparecerá uma tela com uma tabela, mostrando todos os candidatos, quantos
+                            votos receberam e qual sua colocação na eleição. Apertar no botão 'Finalizar'
+                            retornará para a tela inicial de configuração.
+                        </p>
+                        <h3>Atenção!</h3>
+                        <p>
+                            Os efeitos de clicar neste botão são irreversíveis, espero mesmo que saiba o que
+                            está fazendo
                         </p>
                     </li>
                 </ol>
