@@ -252,6 +252,7 @@ function subPasswd(){
     let inputPasswd = document.querySelector("#passwdGet input");
     if(inputPasswd.value === passwd){
         document.querySelector("#passwdGet").style.visibility="hidden";
+        return true;
     }else{
         alert("Senha incorreta!!");
         inputPasswd.value = "";
@@ -262,6 +263,7 @@ function countVotes(){
     let votingArray = [];
     for(el of electionVector[selectedIndex].candidates){
         votingArray.push(el);
+        otes
     }
     let ordered = false;
     while(!ordered){
@@ -356,16 +358,18 @@ function loadElection(){
 }
 
 function clearStorage(){
-    localStorage.clear();
-    selectedIndex = 0;
+    if(confirm("Se você fizer isso, tudo que foi feito será apagado.\nEspero mesmo que saiba o que está fazendo.\nDeseja continuar?")){
+        localStorage.clear();
+        selectedIndex = 0;
 
-    candidate1=new candidate("Candidato 1", 1);
-    election1=new election("Eleição 1");
+        candidate1=new candidate("Candidato 1", 1);
+        election1=new election("Eleição 1");
 
 
-    electionVector = [election1];
+        electionVector = [election1];
 
-    passwd = "";
-    renderElections();
-    renderCandidates();
+        passwd = "";
+        renderElections();
+        renderCandidates();
+    }
 }
