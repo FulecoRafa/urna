@@ -1,3 +1,5 @@
+console.log("Up to date");
+
 class candidate{
     constructor(name , num){
         this.name = name;
