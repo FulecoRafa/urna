@@ -28,7 +28,7 @@ let passwd = "";
 if(!(localStorage.getItem('data')===null)){
     loadElection();
 }
-if(!(localStorage.getItem('passwd')===null)){
+if(!(localStorage.getItem('passwd')===null || localStorage.getItem('passwd')==="")){
     passwd=localStorage.getItem('passwd');
 }
 //Passwd
@@ -222,6 +222,7 @@ function renderOptions(){
     let defaultOption = document.createElement('option');
     let defaultText = document.createTextNode("Candidato");
     let selector = document.querySelector("#candidateVote");
+    selector.innerHTML = "";
     defaultOption.appendChild(defaultText);
     selector.appendChild(defaultOption);
     for(el of electionVector[selectedIndex].candidates){
@@ -243,7 +244,7 @@ function addVote(){
         }
     }
     option.value="Candidato";
-    if(!(localStorage.getItem('passwd')===null)){
+    if(!(localStorage.getItem('passwd')===null || localStorage.getItem('passwd')==="")){
         document.querySelector("#passwdGet").style.visibility = "visible";
     }
 }
@@ -263,7 +264,6 @@ function countVotes(){
     let votingArray = [];
     for(el of electionVector[selectedIndex].candidates){
         votingArray.push(el);
-        otes
     }
     let ordered = false;
     while(!ordered){
@@ -341,6 +341,8 @@ function endOfAll(){
     row.appendChild(num);
     row.appendChild(votes);
     row.appendChild(position);
+
+    table.appendChild(row);
 }
 
 //save election
